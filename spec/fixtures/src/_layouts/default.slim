@@ -1,0 +1,12 @@
+---
+---
+doctype html
+html
+  head
+    title == page[:title]
+
+  body
+    div THIS IS MY LAYOUT
+    == yield
+
+    footer == array_to_sentence_string ["one", "two", "three"]
