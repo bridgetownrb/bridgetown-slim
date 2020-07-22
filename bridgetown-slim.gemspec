@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = BridgetownSlim::VERSION
   spec.author        = "Bridgetown Team"
   spec.email         = "maintainers@bridgetownrb.com"
-  spec.summary       = "Sample code for creating new Bridgetown plugins"
+  spec.summary       = "A Bridgetown plugin which provides support for Slim templates."
   spec.homepage      = "https://github.com/bridgetown/bridgetown-slim"
   spec.license       = "MIT"
 
