@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "tilt/erb"
 require "slim"
 
 module Bridgetown
@@ -32,7 +31,7 @@ module Bridgetown
       def convert(content, convertible)
         slim_view = Bridgetown::SlimView.new(convertible)
 
-        slim_renderer = Slim::Template.new { content }
+        slim_renderer = Slim::Template.new(convertible.relative_path) { content }
 
         if convertible.is_a?(Bridgetown::Layout)
           slim_renderer.render(slim_view) do
