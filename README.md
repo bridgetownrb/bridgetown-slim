@@ -16,6 +16,8 @@ $ bundle add bridgetown-slim -g bridgetown_plugins
 
 Simply name your page, layout, or partial with a `.slim` extension. The available features will be fairly analogous to [the ERB support](https://beta.bridgetownrb.com/docs/erb-and-beyond#haml-and-slim) in Bridgetown, including support for helpers, partials, and rendering Liquid components. You can even [embed Markdown and other template languages](https://github.com/slim-template/slim#embedded-engines-markdown-) using standard Slim syntax.
 
+You can also add `template_engine: slim` to your file's front matter and use any extension you want. For example, you could add `data.xml` to your source folder and simply make sure the front matter contains `template_engine: slim`.
+
 ## Testing
 
 * Run `bundle exec rspec` to run the test suite

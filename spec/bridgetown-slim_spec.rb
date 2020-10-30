@@ -23,6 +23,7 @@ describe(BridgetownSlim) do
   end
   let(:site) { Bridgetown::Site.new(config) }
   let(:contents) { File.read(dest_dir("index.html")) }
+  let(:dataxml) { File.read(dest_dir("data.xml")) }
   before(:each) do
     metadata = metadata_defaults.merge(metadata_overrides).to_yaml.sub("---\n", "")
     File.write(source_dir("_data/site_metadata.yml"), metadata)
@@ -37,5 +38,9 @@ describe(BridgetownSlim) do
     expect(contents).to match "<h2>TITLE: I'm a Slim title!</h2>"
     expect(contents).to match "<footer>one, two, and three</footer>"
     expect(contents).to match "<li>Nifty!</li>"
+  end
+
+  it "outputs an XML file configured to use Slim" do
+    expect(dataxml).to match "<parent><child>This is a child node.</child></parent>"
   end
 end

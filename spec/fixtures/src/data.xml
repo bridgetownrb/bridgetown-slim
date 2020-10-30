@@ -1,0 +1,6 @@
+---
+template_engine: slim
+---
+
+parent
+  child This is a child node.

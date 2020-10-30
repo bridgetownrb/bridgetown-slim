@@ -1,5 +1,9 @@
 # main
 
+# 1.1.0 / 2020-10-30
+
+* Updated for compatibilty with Bridgetown 0.18
+
 # 1.0.2 / 2020-07-24
 
 * Fix broken link to GitHub repo

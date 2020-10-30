@@ -41,6 +41,16 @@ module Bridgetown
           slim_renderer.render(slim_view)
         end
       end
+
+      def matches(ext, convertible)
+        return true if convertible.data[:template_engine] == "slim"
+
+        super(ext)
+      end
+
+      def output_ext(ext)
+        ext == ".slim" ? ".html" : ext
+      end
     end
   end
 end
