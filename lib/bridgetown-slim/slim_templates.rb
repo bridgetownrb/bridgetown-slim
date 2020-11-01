@@ -19,6 +19,7 @@ module Bridgetown
 
   module Converters
     class SlimTemplates < Converter
+      priority :highest
       input :slim
 
       # Logic to do the Slim content conversion.
@@ -29,6 +30,8 @@ module Bridgetown
       #
       # @return [String] The converted content.
       def convert(content, convertible)
+        return content if convertible.data[:template_engine] != "slim"
+
         slim_view = Bridgetown::SlimView.new(convertible)
 
         slim_renderer = Slim::Template.new(convertible.relative_path) { content }
@@ -45,7 +48,9 @@ module Bridgetown
       def matches(ext, convertible)
         return true if convertible.data[:template_engine] == "slim"
 
-        super(ext)
+        super(ext).tap do |ext_matches|
+          convertible.data[:template_engine] = "slim" if ext_matches
+        end
       end
 
       def output_ext(ext)

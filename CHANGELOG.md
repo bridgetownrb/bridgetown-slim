@@ -1,5 +1,9 @@
 # main
 
+# 1.1.1 / 2020-11-01
+
+* Set template_engine frontmatter when matching on extension alone
+
 # 1.1.0 / 2020-10-30
 
 * Updated for compatibilty with Bridgetown 0.18
