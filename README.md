@@ -31,3 +31,8 @@ You can also add `template_engine: slim` to your file's front matter and use any
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
+
+
+## Examples
+
+- Template using Slim, Bridgetown, Tailwind 2.0, and Snowpack. https://github.com/ParamagicDev/bridgetown-slim-starter
