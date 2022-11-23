@@ -11,9 +11,25 @@ module Bridgetown
       partial_segments.last.sub!(%r!^!, "_")
       partial_name = partial_segments.join("/")
 
-      Slim::Template.new(
-        site.in_source_dir(site.config[:partials_dir], "#{partial_name}.slim")
-      ).render(self, options)
+      search_directories = [site.config[:partials_dir], site.config[:components_dir]]
+      partial_file = nil
+
+      if partial_name.start_with?(*search_directories)
+        partial_file = site.in_source_dir("#{partial_name}.slim")
+      else
+        for directory in search_directories
+          partial_file = site.in_source_dir(directory, "#{partial_name}.slim")
+          if File.exists?(partial_file)
+            break
+          else
+            partial_file = nil
+          end
+        end
+      end
+
+      partial_file = site.in_source_dir("#{partial_name}.slim") if partial_file == nil
+
+      Slim::Template.new(partial_file).render(self, options)
     end
   end
 
