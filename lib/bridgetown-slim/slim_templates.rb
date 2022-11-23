@@ -15,6 +15,10 @@ module Bridgetown
         site.in_source_dir(site.config[:partials_dir], "#{partial_name}.slim")
       ).render(self, options)
     end
+
+    def asset_path(asset_type)
+      Bridgetown::Utils.parse_frontend_manifest_file(site, asset_type.to_s)
+    end
   end
 
   module Converters
