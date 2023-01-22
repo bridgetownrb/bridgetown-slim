@@ -2,15 +2,21 @@
 
 A Bridgetown plugin to provide support for [Slim templates](http://slim-lang.com).
 
-_Requires Bridgetown 0.16 or greater._
-
-## Installation
+## Installation for Bridgetown 1.2+
 
 Run this command to add this plugin to your site's Gemfile:
 
 ```shell
-$ bundle add bridgetown-slim -g bridgetown_plugins
+$ bundle add bridgetown-slim
 ```
+
+And then add the initializer to your configuration in `config/initializers.rb`:
+
+```ruby
+init :"bridgetown-slim"
+```
+
+(For Bridgetown 1.1 or earlier, [read these instructions](https://github.com/bridgetownrb/bridgetown-slim/tree/v1.1.1).)
 
 ## Usage
 

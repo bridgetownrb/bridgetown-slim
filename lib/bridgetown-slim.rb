@@ -1,4 +1,7 @@
 # frozen_string_literal: true
 
 require "bridgetown"
-require "bridgetown-slim/slim_templates"
+
+Bridgetown.initializer :"bridgetown-slim" do
+  require "bridgetown-slim/slim_templates"
+end
