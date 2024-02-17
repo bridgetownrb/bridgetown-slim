@@ -1,5 +1,10 @@
 # bridgetown-slim
 
+> [!CAUTION]
+> This plugin has been marked deprecated and will no longer be recommended or officially maintained for Bridgetown 2.0+. We will still accept PRs if provided, but make no guarantee it won't break in future Bridgetown versions.
+
+---
+
 A Bridgetown plugin to provide support for [Slim templates](http://slim-lang.com).
 
 ## Installation for Bridgetown 1.2+
